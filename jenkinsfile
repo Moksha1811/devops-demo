@@ -1,0 +1,35 @@
+pipleline{
+    agent any
+    stages{
+        stage("server details"){
+            steps{
+                echo"server details"
+            }
+        }
+        stage("cpu details"){
+            steps{
+                sh'lscpu'
+            }
+        }
+        stages("memory details"){
+            steps{
+                sh'free -h'
+            }
+        }
+        stage("disk details"){
+            steps{
+                sh'df -h'
+            }
+        }
+        stage("network deatils"){
+            step{
+                sh'ifconfig'
+            }
+        }
+        stage("ip address details"){
+            steps{
+                sh 'hostname -i'
+            }
+        }
+    }
+}
