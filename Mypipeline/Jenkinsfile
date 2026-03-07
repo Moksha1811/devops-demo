@@ -1,9 +1,9 @@
-pipleline {
+pipeline {
     agent any
     stages {
         stage("Server Details") {
             steps {
-                echo "server details"
+                echo "Server Details"
             }
         }
         stage("CPU Details") {
@@ -28,7 +28,7 @@ pipleline {
         }
         stage("IP Address Details") {
             steps {
-                sh 'hostname -i'
+                sh 'hostname -I'
             }
         }
     }
